@@ -56,7 +56,7 @@ resource "aws_instance" "app_server_public" {
 }
 
 resource "aws_instance" "app_server_private" {
-  ami           = "ami-08d70e59c07c61a3a"
+    ami           = "ami-08d70e59c07c61a3a"
   instance_type = "t2.micro"
         subnet_id     = aws_subnet.private_subnet.id
         availability_zone = "us-west-2c"
