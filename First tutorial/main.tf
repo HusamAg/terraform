@@ -1,4 +1,10 @@
 terraform {
+  cloud {
+    organization = "husamag-test"
+    workspaces {
+      name = "learn-tfc-aws"
+    }
+  }
   required_providers {
     aws = {
       source  = "hashicorp/aws"
