@@ -1,4 +1,6 @@
 name: TF-validator
+env:
+  name: test-env
 on:
   push:
     branches: [ "main" ]
@@ -8,8 +10,6 @@ on:
 
 jobs:
   build:
-    env:
-      name: test-env
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
