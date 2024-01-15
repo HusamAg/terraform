@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: format terraform step
-        run: terraform fmt
-
-      - name: validate terraform step
-        run: terraform validate
+      - name: format and validate terraform step
+        working-directory: ./tf-vpc
+        run: |
+          terraform fmt
+          terraform validate
