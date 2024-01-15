@@ -44,10 +44,10 @@ resource "aws_subnet" "public_subnet" {
 }
 
 resource "aws_instance" "app_server_public" {
-  ami           = "ami-08d70e59c07c61a3a"
-  instance_type = "t2.micro"
+    ami           = "ami-08d70e59c07c61a3a"
+        instance_type = "t2.micro"
 
-  subnet_id = aws_subnet.public_subnet.id
+        subnet_id = aws_subnet.public_subnet.id
   availability_zone = "us-west-2c"
 
   tags = {
@@ -58,9 +58,9 @@ resource "aws_instance" "app_server_public" {
 resource "aws_instance" "app_server_private" {
   ami           = "ami-08d70e59c07c61a3a"
   instance_type = "t2.micro"
-  subnet_id     = aws_subnet.private_subnet.id
-  availability_zone = "us-west-2c"
-  tags = {
-    Name = "private ec2"
+        subnet_id     = aws_subnet.private_subnet.id
+        availability_zone = "us-west-2c"
+        tags = {
+        Name = "private ec2"
   }
 }
