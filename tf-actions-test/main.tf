@@ -30,7 +30,7 @@ resource "aws_subnet" "private_subnet" {
   availability_zone = "us-west-2c"
 
   tags = {
-    Name = "Private subnet test"
+    Name = "Private subnet"
   }
 }
 
