@@ -29,7 +29,7 @@ resource "aws_subnet" "private_subnet" {
   availability_zone = "us-west-2c"
 
   tags = {
-    Name = "Private"
+    Name = "Private subnet"
   }
 }
 
@@ -39,7 +39,7 @@ resource "aws_subnet" "public_subnet" {
   availability_zone = "us-west-2c"
 
   tags = {
-    Name = "Public"
+    Name = "Public subnet"
   }
 }
 
