@@ -19,4 +19,6 @@ jobs:
 
       - name: applying terraform
         working-directory: ./tf-actions-test
-        run: terraform apply
+        run: |
+          terraform init
+          terraform apply
