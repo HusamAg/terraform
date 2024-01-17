@@ -1,10 +1,11 @@
 terraform {
+  /*
   cloud {
     organization = "husamag-test"
     workspaces {
       name = "tf-vpc"
     }
-  }
+  }*/
   required_providers {
     aws = {
       source  = "hashicorp/aws"
