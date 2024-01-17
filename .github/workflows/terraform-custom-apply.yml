@@ -1,4 +1,4 @@
-name: "Terraform Custom Plan"
+name: "Terraform Custom apply"
 
 on:
   push:
