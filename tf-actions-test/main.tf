@@ -1,9 +1,9 @@
+
 terraform {
-  cloud {
-    organization = "husamag-test"
-    workspaces {
-      name = "tf-vpc"
-    }
+  backend "s3" {
+    bucket = "husamag-git-actions-test"
+    key    = "terraform/state.tfstate"
+    region = "us-west-2"
   }
 
   required_providers {
