@@ -1,9 +1,8 @@
 name: "Terraform Apply"
-
 on:
   push:
     branches:
-      - main
+      - main12
 
 env:
   TF_CLOUD_ORGANIZATION: "husamag-test"
