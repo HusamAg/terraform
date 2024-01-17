@@ -13,10 +13,10 @@ jobs:
     name: "Terraform Custom Plan"
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        working-directory: ./tf-actions-test
+      - uses: actions/checkout@v3
 
+      - name: initializing and planning terraform
+        working-directory: ./tf-actions-test
         run: |
           terraform init
           terraform plan
