@@ -17,7 +17,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: secrets.AWS_SECRET_ACCESS_KEY
         working-directory: ./tf-vpc
         run: |
-          echo ${secrets.TEST}
+          echo ${{secrets.TEST}}
           terraform init
           terraform fmt
           terraform validate
