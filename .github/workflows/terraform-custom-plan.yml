@@ -3,10 +3,13 @@ name: "Terraform Custom Plan"
 on:
   pull_request:
 
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read  # This is required for actions/checkout
+
 env:
-  AWS_ACCESS_KEY_ID: "${{ secrets.AWS_ACCESS_KEY_ID }}"
-  AWS_SECRET_ACCESS_KEY: "${{ secrets.AWS_SECRET_ACCESS_KEY }}"
-  
+  BUCKET_NAME : "husamag-git-actions-test"
+  AWS_REGION : "us-west-2"
 
 jobs:
   terraform:
@@ -14,6 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          role-to-assume: arn:aws:iam::248870895852:role/githubAction
+          role-session-name: samplerolesession
+          aws-region: ${{ env.AWS_REGION }}
 
       - name: initializing and planning terraform
         working-directory: ./tf-actions-test
