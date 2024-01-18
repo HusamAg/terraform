@@ -21,4 +21,4 @@ jobs:
         working-directory: ./tf-actions-test
         run: |
           terraform init
-          echo 'yes' | terraform apply
+          terraform apply --auto-approve
