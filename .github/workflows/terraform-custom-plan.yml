@@ -8,7 +8,7 @@ permissions:
   contents: read  # This is required for actions/checkout
 
 env:
-  BUCKET_NAME : "husamag-git-actions-test"
+  BUCKET_NAME : "${{ secrets.AWS_TF_STATE_BUCKET }}"
   AWS_REGION : "us-west-2"
 
 jobs:
